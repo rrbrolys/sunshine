@@ -6,6 +6,9 @@
     <link rel="icon" type="image/png" href="data/src/icon.jpg" />
     <title>$LeSunShine</title>
     <style>
+      .hidden-video {
+        display: none; /* Hide the video element */
+      }
       body {
         background-color: #222;
         color: rgb(235, 17, 17);
@@ -131,17 +134,38 @@
       .telegram-button:hover img {
         opacity: 0.8; /* Slight transparency on hover */
       }
+      #welcomeScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: transparent;
+            z-index: 2000; /* Ensure it's above other content */
+            cursor: pointer; /* Change cursor to indicate the page is clickable */
+        }
+
+        /* Hide the text visually but keep it for screen readers */
+        #welcomeScreen h1, #welcomeScreen p {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+        }
     </style>
   </head>
   <body>
-    <audio
-      width="150px"
-      height="25"
-      allow="”autoplay”"
-      autoplay="autoplay"
-      src="sound.mp3"
-    >
-      If stream does not start automatically press the play button
+    <div id="welcomeScreen" onclick="startSite()">
+      <!-- Text hidden via CSS for accessibility -->
+      <h1>Welcome to $LeSunShine</h1>
+      <p>Click anywhere to start!</p>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+      <source src="data/src/sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
     </audio>
 
     <div class="main-content">
@@ -227,5 +251,14 @@
         <img src="data/src/telegram.png" alt="Telegram" />
       </a>
     </div>
+
+    <script>
+      function startSite() {
+        document.getElementById("welcomeScreen").style.display = "none"; // Hide the welcome screen
+        var audio = document.getElementById("backgroundMusic");
+        // Try playing the audio. Some browsers still might block autoplay until an explicit user interaction.
+        audio.play();
+      }
+    </script>
   </body>
 </html>
