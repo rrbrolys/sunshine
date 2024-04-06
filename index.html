@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="data/src/icon.jpg" />
+    <title>$LeSunShine</title>
+    <style>
+      body {
+        background-color: #222;
+        color: rgb(235, 17, 17);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #222;
+        background-image: url("data/src/bg.png"); /* Add your background image path here */
+        background-size: cover; /* Cover the entire page */
+        background-position: center; /* Center the background image */
+        background-attachment: fixed; /* Fix the background during scroll */
+        color: rgb(235, 17, 17);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-content {
+        /* display: grid; */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 80vh; /* Set a fixed height for the container */
+        position: relative;
+        padding: 40px;
+        text-align: center;
+      }
+      .title-left,
+      .title-right {
+        position: absolute; /* Absolute positioning */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Offset the element by half its height */
+      }
+      .title-left {
+        left: 40px; /* Spacing from the left side */
+      }
+      .title-right {
+        right: 40px; /* Spacing from the right side */
+      }
+      .main-gift-box video {
+        width: 70%; /* Larger size for the main GIF */
+        max-width: 800px; /* Increase the maximum width of the video */
+        max-height: 70vh; /* Restricts the height to half of the viewport */
+        margin: 0 auto; /* Centers the video */
+      }
+      .videos-section {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent the videos from wrapping */
+        justify-content: center; /* Center the videos horizontally */
+        align-items: center; /* Align the videos vertically */
+        padding: 0 40px; /* Padding on the sides */
+        overflow-x: auto; /* Allows scrolling horizontally if videos overflow */
+      }
+
+      /* Common styles for video containers */
+      .video-container {
+        position: absolute;
+        width: 10%; /* Adjust width as necessary */
+      }
+
+      .video-container video {
+        width: 100%; /* Video fills the container */
+        max-height: auto; /* Optional: limit the height of the videos */
+      }
+
+      .video-container:nth-of-type(1) {
+        top: 20vh;
+        left: 10vw;
+      }
+      .video-container:nth-of-type(2) {
+        top: 10vh;
+        left: 20vw;
+      }
+      .video-container:nth-of-type(3) {
+        top: 10vh;
+        left: 7vw;
+      }
+      .video-container:nth-of-type(4) {
+        top: 5vh;
+        left: 80vw;
+      }
+      .video-container:nth-of-type(5) {
+        bottom: 5vh;
+        left: 5vw;
+      }
+      .video-container:nth-of-type(6) {
+        bottom: 5vh;
+        left: 70vw;
+      }
+      .video-container:nth-of-type(7) {
+        bottom: 20vh;
+        left: 20vw;
+      }
+      .video-container:nth-of-type(8) {
+        bottom: 5vh;
+        left: 85vw;
+      }
+
+      /* Add this to your <style> tag */
+      .social-buttons {
+        position: fixed; /* Keep the links visible even when scrolling */
+        top: 20px; /* Distance from the top of the viewport */
+        left: 0;
+        right: 0;
+        text-align: center; /* Center the inner elements (buttons) */
+        z-index: 1000; /* Ensure it's above other content */
+      }
+
+      .social-buttons a {
+        display: inline-block;
+        margin: 0 10px; /* Space out the links */
+      }
+
+      .twitter-button img,
+      .telegram-button img {
+        width: 18px; /* Adjust the size of the icons if needed */
+        height: auto; /* Maintain aspect ratio */
+        transition: opacity 0.3s;
+      }
+
+      .twitter-button:hover img,
+      .telegram-button:hover img {
+        opacity: 0.8; /* Slight transparency on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <audio autoplay loop>
+      <source src="data/src/sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="main-content">
+      <div class="title-left">
+        <h1>$LeSunShine</h1>
+      </div>
+
+      <div class="main-gift-box">
+        <!-- Main GIF video -->
+        <video autoplay loop muted>
+          <source src="data/src/lebron-james-sunshine.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="title-right">
+        <h1>$LeSunShine</h1>
+      </div>
+    </div>
+
+    <!-- Section for side-by-side GIFs -->
+
+    <!-- Each video is wrapped in its own container for individual styling -->
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif3.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif4.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Each video is wrapped in its own container for individual styling -->
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif5.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif6.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="data/src/gif7.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Add this inside your <body> tag where you want the buttons to appear -->
+    <div class="social-buttons">
+      <a
+        href="https://twitter.com/yourtwitterhandle"
+        target="_blank"
+        class="twitter-button"
+      >
+        <img src="data/src/twitter-black-shape.png" alt="Twitter" />
+      </a>
+      <a
+        href="https://t.me/yourtelegramhandle"
+        target="_blank"
+        class="telegram-button"
+      >
+        <img src="data/src/telegram.png" alt="Telegram" />
+      </a>
+    </div>
+    <script>
+      function playAudio() {
+        var audio = document.getElementById("backgroundMusic");
+        audio.play();
+        document.getElementById("playAudioButton").style.display = 'none'; // Hide play button after starting audio
+      }
+      </script>
+  </body>
+</html>
