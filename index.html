@@ -50,7 +50,7 @@
         width: 70%; /* Larger size for the main GIF */
         max-width: 800px; /* Increase the maximum width of the video */
         max-height: 70vh; /* Restricts the height to half of the viewport */
-        margin: 0 auto; /* Centers the video */
+        margin: 15px auto 0; /* Centers the video */
       }
       .videos-section {
         display: flex;
@@ -122,7 +122,7 @@
 
       .twitter-button img,
       .telegram-button img {
-        width: 18px; /* Adjust the size of the icons if needed */
+        width: 30px; /* Adjust the size of the icons if needed */
         height: auto; /* Maintain aspect ratio */
         transition: opacity 0.3s;
       }
@@ -134,9 +134,14 @@
     </style>
   </head>
   <body>
-    <audio autoplay loop>
-      <source src="data/src/sound.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
+    <audio
+      width="150px"
+      height="25"
+      allow="”autoplay”"
+      autoplay="autoplay"
+      src="sound.mp3"
+    >
+      If stream does not start automatically press the play button
     </audio>
 
     <div class="main-content">
@@ -222,12 +227,5 @@
         <img src="data/src/telegram.png" alt="Telegram" />
       </a>
     </div>
-    <script>
-      function playAudio() {
-        var audio = document.getElementById("backgroundMusic");
-        audio.play();
-        document.getElementById("playAudioButton").style.display = 'none'; // Hide play button after starting audio
-      }
-      </script>
   </body>
 </html>
