@@ -157,12 +157,7 @@
     </style>
   </head>
   <body>
-    <div id="welcomeScreen" onclick="startSite()">
-      <!-- Text hidden via CSS for accessibility -->
-      <h1>Welcome to $LeSunShine</h1>
-      <p>Click anywhere to start!</p>
-    </div>
-
+    
     <audio id="backgroundMusic" loop>
       <source src="data/src/sound.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
@@ -251,14 +246,18 @@
         <img src="data/src/telegram.png" alt="Telegram" />
       </a>
     </div>
-
+    <!-- Transparent welcome screen over the content -->
+    <div id="welcomeScreen" onclick="startSite()">
+        <!-- Text hidden via CSS for accessibility -->
+        <h1>Welcome to $LeSunShine</h1>
+        <p>Click anywhere to start!</p>
+    </div>
     <script>
       function startSite() {
-        document.getElementById("welcomeScreen").style.display = "none"; // Hide the welcome screen
-        var audio = document.getElementById("backgroundMusic");
-        // Try playing the audio. Some browsers still might block autoplay until an explicit user interaction.
-        audio.play();
+          document.getElementById('welcomeScreen').style.display = 'none'; // Hide the welcome screen
+          var audio = document.getElementById('backgroundMusic');
+          audio.play(); // Attempt to play the audio after user interaction
       }
-    </script>
+  </script>
   </body>
 </html>
